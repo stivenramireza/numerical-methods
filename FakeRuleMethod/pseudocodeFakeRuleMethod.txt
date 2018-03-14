@@ -1,0 +1,37 @@
+Read xi, xs, tol, iter
+    If tol >= 0 then
+        If iter > 0 then
+            yi = f(xi)
+            If yi != 0 then
+                ys = f(xs)
+                If ys != 0 then
+                    Si yi*ys < 0 then
+                        xm = xi - ((yi*(xi - xs))/yi-ys)
+                        ym = f(xm)
+                        error = tol + 1
+                        cont = 1
+                        While (ym != 0) ^ (e > tol) ^ (cont < iter) then
+                            If yi*ym < 0 then
+                                xs = xm
+                                ys = ym
+                            Else
+                                xi = xm
+                                yi = ym
+                            End If
+                            xaux = xm
+                            xm = xi - ((yi*(xi - xs))/yi-ys)
+                            ym = f(xm)
+                            error = |xm-xaux|
+                            cont = cont + 1
+                        End While
+                    Else
+                        Failed the interval!
+                Else
+                    xs is a root
+            Else
+                xi is a root
+        Else
+            Wrong iterates!
+    Else
+        Tolerance < 0
+    End If

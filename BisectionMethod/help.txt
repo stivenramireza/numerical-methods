@@ -1,0 +1,11 @@
+HELP Bisection Method!
+
+This method seeks an approximation to the root of a function by entering data such as the 
+starting point and the end point that define the interval, the tolerance that indicates the
+number of correct decimals and significant figures that the delivered result will have. 
+To do this, a tour is made with N iterations entered by the user where the midpoint of the 
+interval is found, increasing its error with the idea that it is close to zero and that the
+absolute or relative error requested by the user resolves the Equation correctly.
+
+Stiven Ramírez Arango – Designer and Programmer
+Sebastián Ospina Cabarcas – Coordinator and Analyst
