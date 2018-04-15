@@ -1,5 +1,0 @@
-HELP Incremental Search Method!
-
-This method supposes a continuous function that presents a change of sign and looks for an approximation 
-to the root of a function by means of the repetition of a number of times that the user enters, an initial 
-point and a delta, defined as the change between the initial point and the next point.
