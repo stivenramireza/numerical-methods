@@ -1,0 +1,11 @@
+Help newton method!
+
+This method requires the user enter an x vaue, number of iterations and tolerance, also this method requires an
+function f and f' (optionally).
+
+The execution o the program consist in found the vlue of x that makes x = x - f/f' and then remplace in f(x)
+to make f(x) = 0
+
+
+Sebastián Ospina Cabarcas – Coordinator and Analyst
+Stiven Ramírez Arango – Designer and Programmer

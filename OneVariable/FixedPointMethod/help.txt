@@ -1,0 +1,11 @@
+HELP fixed point!
+
+This method requires the user enter an x value,number of iterations and tolerance, also this method requires an
+function f and g function,the function g has been derived from function f with mathematical modifications such as
+theorems, etc.
+
+The execution of the program consist in found the value of x that makes x = g(x) and then remplace in f(x)
+to make f(x) = 0.
+
+Stiven Ramírez Arango – Coordinator and Analyst
+Sebastián Ospina Cabarcas – Designer and Programmer

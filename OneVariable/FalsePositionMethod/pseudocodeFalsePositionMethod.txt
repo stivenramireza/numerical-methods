@@ -6,7 +6,7 @@ Read xi, xs, tol, iter
                 ys = f(xs)
                 If ys != 0 then
                     Si yi*ys < 0 then
-                        xm = (xi + xs) / 2
+                        xm = xi - ((yi*(xs - xi))/yi-ys)
                         ym = f(xm)
                         error = tol + 1
                         cont = 1
@@ -19,7 +19,7 @@ Read xi, xs, tol, iter
                                 yi = ym
                             End If
                             xaux = xm
-                            xm = (xi + xs) / 2
+                            xm = xi - ((yi*(xs - xi))/yi-ys)
                             ym = f(xm)
                             error = |xm-xaux|
                             cont = cont + 1

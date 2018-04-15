@@ -24,6 +24,12 @@ Read xi, xs, tol, iter
                             error = |xm-xaux|
                             cont = cont + 1
                         End While
+                        If (ym = 0) then
+                            xm is an aproximate root
+                        Else If (error < tol) then
+                            xaux is an aproximate root
+                        Else
+                            Failed!
                     Else
                         Failed the interval!
                 Else

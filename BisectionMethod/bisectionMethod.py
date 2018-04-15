@@ -30,9 +30,9 @@ def bisec(xi, xs, tol, ite):
                             cont = cont + 1
                         
                         if(ym == 0):
-                            print (str(xm) + " is a aproximate root")
+                            print (str(xm) + " is an aproximate root")
                         elif(error < tol):
-                            print (str(xaux) + " is a aproximate root")
+                            print (str(xaux) + " is an aproximate root")
                         else:
                             print ("Failed!")
                     else:

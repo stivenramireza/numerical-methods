@@ -1,0 +1,33 @@
+Read x0, x1, tol, iter
+    if tol >= 0 then
+        if iter > 0 then
+            y0 = f(x0)
+            y1 = f(x1)
+            if y0 != 0 then
+                if y1 != 0 then
+                    count = 0
+                    err = tol +1
+                    xa = x0
+                    while(y0 != 0 and y1 !=0 and err > tol and count < iter)
+                        xn = x - (f(x)*(x - (x-1))) / (f(x) -f(x-1))
+                        y0 = f(x0)
+                        y1 = f(x1)
+                        err = | xn - xa | or | (xn - xa) / xn |
+                        xa = xn
+                    endwhile
+                    if y0 == 0 then
+                        xa is root
+                    else if y1 == 0 then
+                        xa is root
+                    else if err <= tol
+                        xa is an aproximate root
+                    else
+                        failed!
+                else
+                x1 is root
+            else
+                x0 is root
+        else bad iter 
+    else bal tol
+end
+            

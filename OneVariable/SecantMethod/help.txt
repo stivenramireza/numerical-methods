@@ -1,0 +1,10 @@
+HELP Secant Method!
+
+This method uses a difference instead of a derivative to approximate the slope. 
+It requires 2 initial values and is one of the most used.
+
+Unlike Newton's method, this method calculates the following value of X differently, 
+approaching the root through secants, instead of tangents.
+
+Stiven Ramírez Arango – Coordinator and Analyst
+Sebastián Ospina Cabarcas – Designer and Programmer

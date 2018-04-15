@@ -1,8 +1,12 @@
 #!/usr/bin/python3
 import sympy
 import math
+from prettytable import PrettyTable
 
-def fakeRule(xi, xs, tol, ite):
+def bisec(xi, xs, tol, ite):
+    errorRela.append("")
+    tXi.append(xi)
+    tXs.append(xs)
     if (tol >= 0):
         if (ite > 0):
             yi = function.evalf().subs({x:xi}).evalf()
@@ -10,10 +14,13 @@ def fakeRule(xi, xs, tol, ite):
                 ys = function.evalf().subs({x:xs}).evalf()
                 if (ys != 0):
                     if (yi*ys < 0):
-                        xm = xi - ((yi*(xi-xs))/(yi-ys))
+                        xm = (xi + xs) / 2
+                        tXm.append(xm)
                         ym = function.evalf().subs({x:xm}).evalf()
+                        tfXm.append("%e" %(ym))
                         error = tol + 1
                         cont = 1
+                        tIter.append(cont)
 
                         while((ym != 0) and (error > tol) and (cont < ite)):
                             if yi*ym < 0:
@@ -22,12 +29,17 @@ def fakeRule(xi, xs, tol, ite):
                             else:
                                 xi = xm
                                 yi = ym
-                            
+                            tXs.append(xs)
+                            tXi.append(xi)
                             xaux = xm
-                            xm = xi - ((yi*(xi-xs))/(yi-ys))
+                            xm = (xi + xs) / 2
+                            tXm.append(xm)
                             ym = function.evalf().subs({x:xm}).evalf()
+                            tfXm.append("%e" % (ym))
                             error = math.fabs(xm - xaux)
+                            errorRela.append("%e" % (error/xm))
                             cont = cont + 1
+                            tIter.append(cont)
                         
                         if(ym == 0):
                             print (str(xm) + " is an aproximate root")
@@ -45,6 +57,13 @@ def fakeRule(xi, xs, tol, ite):
             print ("Wrong iterates!")
     else:
         print ("Tolerance < 0")
+    table.add_column("n",tIter)
+    table.add_column("Xi",tXi)
+    table.add_column("Xs",tXs)
+    table.add_column("Xm",tXm)
+    table.add_column("f(Xm)",tfXm)
+    table.add_column("Error Relativo",errorRela)
+    print(table)
                       
 if __name__ == "__main__":
     x = sympy.Symbol('x')
@@ -55,4 +74,11 @@ if __name__ == "__main__":
     xs = float(input("Enter the last point: "))
     tol = float(input("Enter the tolerance: "))
     ite = int(input("Enter N iteraters: "))
-    fakeRule(xi, xs, tol, ite)
+    table = PrettyTable()
+    tIter = []
+    tXi = []
+    tXs = []
+    tXm = []
+    tfXm = []
+    errorRela = []
+    bisec(xi, xs, tol, ite)

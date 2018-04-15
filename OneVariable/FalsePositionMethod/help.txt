@@ -1,0 +1,13 @@
+HELP Fake Rule Method!
+
+This method, like the bisection method, requires the user to enter the start and end points to define the interval,
+in addition to the tolerance with the correct decimals and significant figures and the number of iterations in which
+it is desired to find an approximation of the root of the function entered.
+
+The difference of this method with the previous one is that the way of calculating the midpoint is different. This 
+is done by subtracting the initial point with the division between the function evaluated at that point by the subtraction
+of the initial point with the end point and the subtraction of the function evaluated at the initial point with that of the
+end point (interval xi, xs).
+
+Stiven Ramírez Arango – Designer and Programmer
+Sebastián Ospina Cabarcas – Coordinator and Analyst
