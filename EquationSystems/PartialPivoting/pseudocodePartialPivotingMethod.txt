@@ -1,0 +1,20 @@
+Read A[], n
+For k = 1 step n
+    searchMajor(): major, rowM
+    If major = 0 Then
+        major
+    Else
+        If k != rowM Then
+            changeRow(k, rowM)
+        EndIf
+    EndIf
+    For i = k + 1 step n
+        mik = A[i,k]/ A[k,k]
+        For j = k step n+1
+            A[i,j] = A[i,j] - mikA[i,j]
+            j++
+        EndFor
+        i++
+    EndFor
+    k++
+EndFor

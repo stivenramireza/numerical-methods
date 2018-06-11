@@ -1,0 +1,28 @@
+Read A[]
+L, U = Unknown(A)
+Read b
+z = ProgressiveSubstitution(L,b)
+x = RegressiveSubstitution(U,z)
+print x
+For k = 1 step n
+    sum1 = 0
+    For p = 1 step k-1
+        sum1 = sum1 + L[k,p]*U[p,k]
+    EndFor
+    L[k,k] = A[k,k] - sum1 # Crout Factorization Method
+    For i = k + 1 step n
+        sum2 = 0
+        For p = 1 step k-1
+            sum2 = sum2 + L[i,p]*U[p,k]
+        EndFor
+        L[i,k] = (A[i,k] - sum2) / U[k,k] # Crout Factorization Method
+    EndFor
+    For j = k + 1 step n
+        sum3 = 0
+        For p = 1 step k-1
+            sum3 = sum3 + L[k,p]*U[p,j]
+        EndFor
+        U[k,j] = (A[k,j] - sum3) / L[k,k] # Crout Factorization Method
+    EndFor
+EndFor
+print L, U

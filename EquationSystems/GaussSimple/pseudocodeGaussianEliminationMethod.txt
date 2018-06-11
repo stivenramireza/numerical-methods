@@ -1,0 +1,27 @@
+Read A[], n
+
+# Gaussian Elimination
+For k = 1 step n-1
+    For i = k + 1 step n
+        mik = A[i,k]/ A[k,k]
+        For j = k step n+1
+            A[i,j] = A[i,j] - mikA[i,j]
+            j++
+        EndFor
+        i++
+    EndFor
+    k++
+EndFor
+
+# Regressive Substitution
+For i = n, 1, step-1
+    sum = 0
+    Para j = i +1 step-n
+        sum = sum + A[i, j]Xj
+        j++
+    EndFor
+    Si A[i,i] = 0 Then
+        Stop
+    Xi = (A[i,n+1] - sum) / A[i,i]
+    i++
+EndFor

@@ -1,0 +1,50 @@
+Read xn, fxn
+
+# Create inequality
+Read inequality[]
+For i = 0 step xn-1
+    If i < len(xn) Then
+        Add to inequality
+    EndIf
+EndFor
+
+# Quadratic method
+Read superMatrix[]
+j = 0
+z = 0
+For i = 0 step inequality
+    auxj = z-j
+    equation = ax^2 + bx + c
+    superMatrix[j][z] = i[0][0]**2
+    superMatrix[j][z+1] = i[0][0]
+    superMatrix[j][z+2] = 1
+    superMatrix[j][n] = i[0][1]
+    equation = ax^2 + bx + c
+    superMatrix[j+1][z] = i[1][0]**2
+    superMatrix[j+1][z+1] = i[1][0]
+    superMatrix[j+1][z+2] = 1
+    superMatrix[j+1][n] = i[1][1]
+    z = z + 3
+    j = j + 2
+EndFor
+
+#first derivative
+
+k = j
+z = 0
+For i = 0 step len(inequality)-1
+    superMatrix[k][z] = 2*inequality[i][1][0]
+    superMatrix[k][z+1] = 1
+    superMatrix[k][z+3] = -2*inequality[i+1][0][0]
+    superMatrix[k][z+4] = -1
+    superMatrix[k][n] = 0
+    equation = ax^2 + bx + c
+    k = k + 1
+    z = z + 3
+EndFor
+superMatrix[k][0] = 1
+j = 0
+For i = 0 step len(inequality)
+    func = aux[j]*x**2+aux[j+1]*x + aux[j+2]
+    j = j + 3
+EndFor

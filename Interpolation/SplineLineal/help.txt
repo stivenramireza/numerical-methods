@@ -1,0 +1,9 @@
+HELP Linear Spline Method!
+
+This method generates a function defined by segments using polynomials
+of degree 1 in such a way that the function is continuous and passes
+through all the points.
+
+Stiven Ramírez Arango – Coordinator and Analyst
+Sebastián Ospina Cabarcas – Designer and Programmer
+

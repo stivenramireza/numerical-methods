@@ -1,0 +1,8 @@
+HELP Crout Factorization Method!
+
+This method factored a matrix into two matrices L and U, which apply
+progressive and regressive substitution respectively. In addition,
+the condition is established that row i and column i of matrix U must be 1.
+
+Stiven Ramírez Arango – Designer and Programmer
+Sebastián Ospina Cabarcas – Coordinator and Analyst

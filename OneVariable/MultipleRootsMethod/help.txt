@@ -1,0 +1,8 @@
+Help multiple roots method!
+
+This methods is deriving from fixed point method and solve the problem
+of multiple roots.
+
+
+Sebastián Ospina Cabarcas – Coordinator and Analyst
+Stiven Ramírez Arango – Designer and Programmer

@@ -1,0 +1,73 @@
+Read xn, fxn
+
+# Create inequality
+Read inequality[]
+For i = 0 step xn-1
+    If i < len(xn) Then
+        Add to inequality
+    EndIf
+EndFor
+
+# Cubic method
+Read superMatrix[]
+j = 0
+z = 0
+l = 0
+For i = 0 step inequality
+    auxj = z-j-l
+    equation = ax^3 + bx^2 + cx + d
+    superMatrix[j][z] = i[0][0]**3
+    superMatrix[j][z+1] = i[0][0]**2
+    superMatrix[j][z+2] = i[0][0]
+    superMatrix[j][z+3] = 1
+    superMatrix[j][n] = i[0][1]
+    equation = 3anx**2 + 2xbn + cn = 3an+1x**2 + 2xbn+1 + cn+1
+    superMatrix[j+1][z] = i[1][0]**3
+    superMatrix[j+1][z+1] = i[1][0]**2
+    superMatrix[j+1][z+2] = i[1][0]
+    superMatrix[j+1][z+3] = 1
+    superMatrix[j+1][n] = i[1][1]
+    z = z + 4
+    j = j + 2
+    l = l + 1
+EndFor
+k = j
+z = 0
+For i = 0 step len(inequality)-1
+    superMatrix[k][z] = 3*inequality[i][1][0]**2
+    superMatrix[k][z+1] = 2*inequality[i][1][0]
+    superMatrix[k][z+2] = 1
+    superMatrix[k][z+4] = -3*inequality[i+1][0][0]**2
+    superMatrix[k][z+5] = -2*inequality[i+1][0][0]
+    superMatrix[k][z+6] = -1
+    superMatrix[k][n] = 0
+    equation = 6anx + 2bn = 6anx + 2bn
+    k = k + 1
+    z = z + 4
+EndFor
+z = 0
+For i = 0 step len(inequality)-1
+    superMatrix[k][z] = 6*inequality[i][1][0]
+    superMatrix[k][z+1] = 1
+    superMatrix[k][z+3] = -6*inequality[i+1][0][0]**2
+    superMatrix[k][z+4] = -1
+    superMatrix[k][n] = 0
+    equation = 6anx + 2bn = 6anx + 2bn
+    k = k + 1
+    z = z + 4
+EndFor
+
+# Supposition second derivative
+equation = ax + 2b = 0
+superMatrix[k][0]=6*inequality[0][0][0]
+superMatrix[k][1]=2
+equation = ax + 2b = 0
+superMatrix[k+1][4]=6*inequality[len(inequality)-1][1][0]
+superMatrix[k+1][5]=2
+superMatrix[k][0] = 1
+j = 0
+For i = 0 step len(inequality)
+    func = aux[j]*x**3+aux[j+1]*x**2 + aux[j+2]*x+aux[j+3]
+    j = j + 4
+EndFor
+print func

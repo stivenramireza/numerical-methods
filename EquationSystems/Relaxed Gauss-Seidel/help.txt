@@ -1,0 +1,9 @@
+HELP Relaxed Gauss-Seidel Method!
+
+In this method, we start with a vector of initial values to start iterating.
+The new values of each vector are calculated in order and used immediately
+for subsequent values. The components of each vector are found and stops when
+it meets a certain tolerance. This presents a relaxed <1 or >1.
+
+Stiven Ramírez Arango – Coordinator and Analyst
+Sebastián Ospina Cabarcas – Designer and Programmer

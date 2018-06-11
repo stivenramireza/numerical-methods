@@ -1,0 +1,30 @@
+Read A[], x0, iter, initialValues[]
+relaxed = 1
+
+# Calculate new Seidel
+For i = 0 step len(A)
+    sum = 0
+    for j = 0 step n
+        If j != i Then
+            sum = sum + a[i][j]*x[j]
+        EndIf
+    EndFor
+    value = (relaxed*((a[i][n] - sum)/a[i][i]))+(1-relaxed)*x0[i]
+    x[i] = value
+print x
+
+# Seidel Method
+cont = 0
+dispersion = tol + 1
+For i = 0 step len(x0)
+    Add totalResult
+EndFor
+While (dispersion > tol and cont < niter) Do 
+    x1 = calculateNewSeidel(x0)
+    dispersion = norm (minus(x1, x0)) 
+    x0 = x1
+    cont = cont + 1
+EndWhile
+If dispersion < tol Then
+    Conveged in totalResult
+EndIf

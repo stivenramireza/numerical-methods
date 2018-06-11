@@ -1,0 +1,8 @@
+HELP Gaussian Elimination Method!
+
+This method applies Gaussian elimination by placing zeros under the pivot through
+the use of fundamental operations of addition, subtraction and multiplication, but
+does not include exchange of rows or columns.
+
+Stiven Ramírez Arango – Designer and Programmer
+Sebastián Ospina Cabarcas – Coordinator and Analyst

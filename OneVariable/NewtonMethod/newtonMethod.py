@@ -3,11 +3,12 @@ import sympy
 import math
 from prettytable import PrettyTable
 x = sympy.Symbol('x')
+ln = sympy.ln
 
-f = (math.e**(((-x)**2)+5)) + sympy.ln(x**2 + 3) - 4*x + 45
+f = x * ln(x) - x
 g = x-f/f.diff(x)
-tol = 0.00001
-xa = 0
+tol = 0.1
+xa = 2.5
 table = PrettyTable()
 
 iters = []

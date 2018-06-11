@@ -1,0 +1,8 @@
+HELP Partial Pivoting Method!
+
+This method checks the largest of the first column and exchanges rows until this 
+major is as a pivot and then applies Gaussian elimination. So on until the system
+of equations is solved.
+
+Stiven Ramírez Arango – Designer and Programmer
+Sebastián Ospina Cabarcas – Coordinator and Analyst

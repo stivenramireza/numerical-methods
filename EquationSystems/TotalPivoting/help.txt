@@ -1,0 +1,8 @@
+HELP Total Pivoting Method!
+
+This method exchanges rows and columns of the matrix A looking for the largest element,
+in absolute value, on the diagonal A [k] [k] and in this way obtain small multipliers
+with large pivots. Simple Gaussian elimination is applied and the system of equations is solved.
+
+Stiven Ramírez Arango – Designer and Programmer
+Sebastián Ospina Cabarcas – Coordinator and Analyst

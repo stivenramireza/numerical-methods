@@ -1,0 +1,54 @@
+Read A[], n
+L, U = Unknown(A)
+Read b
+z = ProgressiveSubstitution(L,b)
+x = RegressiveSubstitution(U,z)
+For k = 1 step n
+    sum1 = 0
+    For p = 1 step k-1
+        sum1 = sum1 + L[k,p]*U[p,k]
+    EndFor
+    L[k,k] = Root(A[k,k] - sum1) # Cholesky Factorization Method (Example)
+    U[k,k] = Root(A[k,k] - sum1) 
+    For i = k + 1 step n
+        sum2 = 0
+        For p = 1 step k-1
+            sum2 = sum2 + L[i,p]*U[p,k]
+        EndFor
+        L[i,k] = (A[i,k] - sum2) / U[k,k] # Cholesky Factorization Method (Example)
+    EndFor
+    For j = k + 1 step n
+        sum3 = 0
+        For p = 1 step k-1
+            sum3 = sum3 + L[k,p]*U[p,j]
+        EndFor
+        U[k,j] = (A[k,j] - sum3) / L[k,k] # Cholesky Factorization Method (Example)
+    EndFor
+EndFor
+print L, U
+
+# Gaussian Elimination
+For k = 1 step n-1
+    For i = k + 1 step n
+        mik = A[i,k]/ A[k,k]
+        For j = k step n+1
+            A[i,j] = A[i,j] - mikA[i,j]
+            j++
+        EndFor
+        i++
+    EndFor
+    k++
+EndFor
+
+# Regressive Substitution
+For i = n, 1, step-1
+    sum = 0
+    Para j = i +1 step-n
+        sum = sum + A[i, j]Xj
+        j++
+    EndFor
+    Si A[i,i] = 0 Then
+        Stop
+    Xi = (A[i,n+1] - sum) / A[i,i]
+    i++
+EndFor

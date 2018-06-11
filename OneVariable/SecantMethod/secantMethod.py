@@ -9,14 +9,14 @@ xn = []
 funcF = []
 funcD1 = []
 funcD2 = []
-errorAbs = []
+errorTot = []
 
 def secant(tol,x0,niter):
     if(tol >= 0):
         if (ite > 0):    
             fx0 = f.evalf().subs({x:x0})
             if(fx0 != 0):
-                fx1 = f.evalf().subs({x:x1}).evalf()
+                fx1 = f.evalf().subs({x:x0}).evalf()
                 funcF.append(fx1)
                 error = tol+1
                 errorTot.append(0)

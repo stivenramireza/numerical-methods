@@ -1,0 +1,8 @@
+HELP Jacobi Method!
+
+This method is an extension of the fixed point method. The system Ax = b
+is transformed into the system x = Tx + C. A vector x1 is found from a 
+vector x0. With x1, x2 is calculated and so on until a certain tolerance is met.
+
+Stiven Ramírez Arango – Coordinator and Analyst
+Sebastián Ospina Cabarcas – Designer and Programmer

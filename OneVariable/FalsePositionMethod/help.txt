@@ -1,4 +1,4 @@
-HELP Fake Rule Method!
+HELP False Position Method!
 
 This method, like the bisection method, requires the user to enter the start and end points to define the interval,
 in addition to the tolerance with the correct decimals and significant figures and the number of iterations in which

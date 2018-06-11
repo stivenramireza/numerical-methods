@@ -1,0 +1,15 @@
+Read xn, fxn
+For i = 0 step len(xn)
+    num = 1
+    den = 1
+    For j = 0 step len(xn)
+        If i != j Then
+            num = num * (x-xn[j])
+            den = den * (xn[i]-xn[j])
+        EndIf
+    EndFor
+EndFor
+For i = 0 step len(functions)
+    polinomyal = polinomyal + fxn[i]*functions[i]
+EndFor
+print polinomyal

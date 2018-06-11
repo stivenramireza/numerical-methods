@@ -1,0 +1,9 @@
+HELP Cubic Spline Method!
+
+This method generates a function defined by segments using polynomials
+of degree 3 in such a way that the function is continuous, derivable,
+smooth and passes through all the points.
+
+Stiven Ramírez Arango – Coordinator and Analyst
+Sebastián Ospina Cabarcas – Designer and Programmer
+

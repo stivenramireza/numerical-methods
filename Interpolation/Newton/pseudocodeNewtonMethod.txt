@@ -1,0 +1,14 @@
+Read n, xn, fxn, actualValues, difference, i, actual
+If len(actualValues) = 1 Then
+    Add actualValue
+Else If i = len(actualValues) Then
+    For i = 0 step difference+1
+        difference = difference + 1
+    EndFor
+Else
+    f =[(actualValues[i]-actualValues[i-1])/(xn[i+difference]-xn[i-1])]
+    i = i + 1
+EndIf
+For i = 0 step len(derivs-1)
+    print x
+EndFor

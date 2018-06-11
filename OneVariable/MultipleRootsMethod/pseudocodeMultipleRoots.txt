@@ -1,0 +1,26 @@
+Read xo, tol, iter
+    if tol >= 0 then
+        if iter > 0 then
+            y = f(x0)
+            if y != 0 then
+                count = 0
+                err = tol +1
+                xa = x0
+                while(y!= 0 and err > tol and count < iter)
+                    xn = x - f(x)f'(x)/((f'(x)^2)-(f(x)*f''(x)))
+                    y = f(x)
+                    err = | xn - xa |
+                    xa = xn
+                endwhile
+                if y == 0 then
+                    xa is root
+                else if err <= tol
+                    xa is an aproximate root
+                else
+                    failed!
+            else
+                x0 is root
+        else bad iter
+    else bal tol
+end
+            

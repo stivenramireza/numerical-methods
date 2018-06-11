@@ -1,0 +1,15 @@
+Read xn, fxn
+
+# Create inequality
+Read inequality[]
+For i = 0 step xn-1
+    If i < len(xn) Then
+        Add to inequality
+    EndIf
+EndFor
+
+# Linear method
+For i = 0 step inequality
+    print i
+    y = i[1][1]+((i[1][1]-i[0][1])/(i[1][0]-i[0][0])*(x-i[1][0]))
+    print y
